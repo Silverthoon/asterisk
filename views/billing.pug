@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+    include head
+    div(class="container")
+        h3(class="my-5 text-center text-white Montserrat-Bold") Billing Details    
+        table(class="table bg-asterisk Montserrat.Regular text-white border border-secondary shadow table-borderless table-hover" style="table-layout: fixed;")
+            thead(class="shadow")
+                tr
+                    th(scope="col") From
+                    th(scope="col") To
+                    th(scope="col") Destination
+                    th(scope="col") Total Duration
+                    th(scope="col") Unit Cost
+                    th(scope="col") Total Cost
+            tbody
+                tr
+                    td=from
+                    td=to
+                    td 8001
+                    td=totalDuration+" seconds"
+                    td 2 fcfa/second
+                    td=totalCost+" fcfa"

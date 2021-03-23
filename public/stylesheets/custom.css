@@ -1,0 +1,74 @@
+@font-face {
+	font-family: "Montserrat-Regular";
+	src: url('/stylesheets/Montserrat-Regular.ttf');
+}
+
+.Montserrat-Regular {
+	font-family: "Montserrat-Regular";
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url('/stylesheets/Montserrat-Bold.ttf');
+}
+
+.Montserrat-Bold {
+	font-family: "Montserrat-Bold";
+}
+
+@font-face {
+	font-family: "Montserrat-Black";
+	src: url('/stylesheets/Montserrat-Black.ttf');
+}
+
+.Montserrat-Black {
+	font-family: "Montserrat-Black";
+}
+
+@font-face {
+	font-family: "Montserrat-Light";
+	src: url('/stylesheets/Montserrat-Light.ttf');
+}
+
+.Montserrat-Light {
+	font-family: "Montserrat-Light";
+}
+
+@font-face {
+	font-family: "Montserrat-Thin";
+	src: url('/stylesheets/Montserrat-Thin.ttf');
+}
+
+.Montserrat-Thin {
+	font-family: "Montserrat-Thin";
+}
+
+@font-face {
+	font-family: "Montserrat-Medium";
+	src: url('/stylesheets/Montserrat-Medium.ttf');
+}
+
+.Montserrat-Medium {
+	font-family: "Montserrat-Medium";
+}
+
+.bg-asterisk{
+    background-color: rgb(244,129,32) !important;
+}
+
+.text-asterisk{
+    color: rgb(244,129,32) !important;
+}
+
+.bg-asterisk-grey{
+    background-color: rgb(145,147,150) !important;
+}
+
+.text-asterisk-grey{
+    color: rgb(145,147,150) !important;
+}
+
+.footer{
+	height: 30px;
+	font-size: 12px;
+}

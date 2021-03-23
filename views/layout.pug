@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/custom.css')
+    link(rel='stylesheet', href='/stylesheets/css/css/all.css')
+    link(rel='stylesheet', href='/stylesheets/css/datepicker.css')
+  body(class="bg-secondary")
+    block content
+    //-
+      nav(class="navbar footer Montserrat-Bold text-secondary navbar-light bg-white shadow-lg")
+      div(class="container d-flex justify-content-center")
+        a(class="mx-2 mb-3 text-secondary text-decoration-none" href="#") Help 
+        a(class="mx-2 mb-3 text-secondary text-decoration-none" href="#") Privacy 
+        a(class="mx-2 mb-3 text-secondary text-decoration-none" href="#") Terms
+        p(class="mx-2" href="#") -
+        p(class="mx-2") Copyright © 2021 Skyran Group
+    script(src='/javascripts/popper.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/datepicker.js')
+    script(src='/javascripts/custom.js')
