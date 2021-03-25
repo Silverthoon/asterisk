@@ -1,0 +1,97 @@
+@font-face {
+	font-family: "Montserrat-Regular";
+	src: url('/stylesheets/Montserrat-Regular.ttf');
+}
+
+.Montserrat-Regular {
+	font-family: "Montserrat-Regular";
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url('/stylesheets/Montserrat-Bold.ttf');
+}
+
+.Montserrat-Bold {
+	font-family: "Montserrat-Bold";
+}
+
+@font-face {
+	font-family: "Montserrat-Black";
+	src: url('/stylesheets/Montserrat-Black.ttf');
+}
+
+.Montserrat-Black {
+	font-family: "Montserrat-Black";
+}
+
+@font-face {
+	font-family: "Montserrat-Light";
+	src: url('/stylesheets/Montserrat-Light.ttf');
+}
+
+.Montserrat-Light {
+	font-family: "Montserrat-Light";
+}
+
+@font-face {
+	font-family: "Montserrat-Thin";
+	src: url('/stylesheets/Montserrat-Thin.ttf');
+}
+
+.Montserrat-Thin {
+	font-family: "Montserrat-Thin";
+}
+
+@font-face {
+	font-family: "Montserrat-Medium";
+	src: url('/stylesheets/Montserrat-Medium.ttf');
+}
+
+.Montserrat-Medium {
+	font-family: "Montserrat-Medium";
+}
+
+.buttons-excel{
+	background-color: rgb(77,156,173) !important;
+}
+
+.buttons-print{
+	background-color: rgb(77,156,173) !important;
+}
+
+.bg-skyran-1{
+    background-color: rgb(38,99,127) !important;
+}
+.bg-skyran-2{
+    background-color: rgb(131,158,169) !important;
+}
+
+.bg-skyran-3{
+    background-color: rgb(77,156,173) !important;
+}
+
+.text-skyran-1{
+    color: rgb(38,99,127) !important;
+}
+
+.text-skyran-2{
+    color: rgb(131,158,169) !important;
+}
+
+.text-skyran-3{
+    color: rgb(77,156,173) !important;
+}
+
+.footer{
+	height: 30px;
+	font-size: 12px;
+}
+
+.paginate_button:hover{
+	background-color: rgb(77,156,173) !important;
+}
+
+.paginate_button.current{
+	background-color: rgb(77,156,173) !important;
+}

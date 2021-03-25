@@ -1,0 +1,49 @@
+extends layout 
+
+block content
+    div(class="fix-header fix-sidebar")
+        div(class="preloader")
+            svg(class="circular" viewBox="25 25 50 50")
+                circle(class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10")
+        div(id="main-wrapper")
+            include panel
+            div(class="page-wrapper")
+                div(class="row page-titles")
+                    div(class="col-md-5 align-self-center")
+                        h3(class="text-skyran-3 Montserrat-Bold") Dashboard
+                    div(class="col-md-7 align-self-center")
+                        ol(class="breadcrumb Montserrat-Medium")
+                            li(class="breadcrumb-item")
+                                a(href="javascript:void(0)") Home
+                            li(class="breadcrumb-item active") Dashboard
+                div(class="container-fluid")
+                    div(class="row")
+                        div(class="col-12")
+                            div(class="card")
+                                div(class="card-body")
+                                    h4(class="card-title Montserrat-Bold text-skyran-3") Calls Data Records
+                                    h6(class="card-subtitle Montserrat-Regular") Export data to Excel & Print
+                                    div(class="table-responsive m-t-40 Montserrat-Regular")
+                                        table(id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%")
+                                            thead
+                                                tr
+                                                    th(scope="col" class="w-10") Account ID
+                                                    th(scope="col" class="w-10") Source
+                                                    th(scope="col" class="w-10") Destination
+                                                    th(scope="col") Call Start time
+                                                    th(scope="col") Call Answer time
+                                                    th(scope="col") Call End time
+                                                    th(scope="col" class="w-5") Duration
+                                                    th(scope="col" class="w-10") Disposition
+                                            tbody
+                                                each val,index in callList
+                                                    tr
+                                                        td=callList[index].accountcode
+                                                        td=callList[index].src
+                                                        td=callList[index].dst
+                                                        td=callList[index].start
+                                                        td=callList[index].answer
+                                                        td=callList[index].end
+                                                        td=callList[index].billsec
+                                                        td=callList[index].disposition
+
