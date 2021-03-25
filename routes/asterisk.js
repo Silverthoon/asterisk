@@ -8,11 +8,11 @@ const moment = require('moment');
 /* GET dashboard page. */
 router.get('/dashboard', function (req, res, next) {
   async function loadCalls() {
-    var calls = await CallList.findAndCountAll({limit: req.query.limit, offset: req.skip});
+    var calls = await CallList.findAndCountAll({order: [['accountcode', 'ASC'],],},);
     const itemCount = calls.count;
     const pageCount = Math.ceil(calls.count / req.query.limit);
     if (req.session.username){
-      res.render('dash/dashboard', {title: 'Dashboard', username : req.session.username, callList: calls.rows,
+      res.render('dashboard', {title: 'Dashboard', username : req.session.username, callList: calls.rows,
       pageCount,
       itemCount,
       pages: paginate.getArrayPages(req)(3, pageCount, req.query.page) });
@@ -23,7 +23,10 @@ router.get('/dashboard', function (req, res, next) {
   loadCalls();
 });
 
-/* GET dashboard page. */
+router.get('/billing', function(req, res, next) {
+  res.render('billing', { title: 'Billing' });
+});
+
 router.post('/billing', function (req, res, next) {
   async function bill() {
     var to = new Date(req.body.to+" 23:59:59");

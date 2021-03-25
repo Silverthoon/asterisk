@@ -3,11 +3,14 @@ html
   head
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='/stylesheets/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/custom.css')
-    link(rel='stylesheet', href='/stylesheets/css/css/all.css')
+    link(rel='stylesheet', href='/stylesheets/css/all.css')
+    link(rel='stylesheet', href='/stylesheets/css/lib/bootstrap/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/css/helper.css')
+    link(rel='stylesheet', href='/stylesheets/css/lib/owl.theme.default.min.css')
+    link(rel='stylesheet', href='/stylesheets/css/style.css')
+    link(rel='stylesheet', href='/stylesheets/css/custom.css')
     link(rel='stylesheet', href='/stylesheets/css/datepicker.css')
-  body(class="bg-secondary")
+  body 
     block content
     //-
       nav(class="navbar footer Montserrat-Bold text-secondary navbar-light bg-white shadow-lg")
@@ -17,8 +20,23 @@ html
         a(class="mx-2 mb-3 text-secondary text-decoration-none" href="#") Terms
         p(class="mx-2" href="#") -
         p(class="mx-2") Copyright © 2021 Skyran Group
-    script(src='/javascripts/popper.js')
-    script(src='/javascripts/bootstrap.min.js')
-    script(src='/javascripts/jquery.js')
-    script(src='/javascripts/datepicker.js')
+        script(src='/javascripts/lib/jquery/jquery.min.js')
+    script(src='/javascripts/lib/jquery/jquery.min.js')
+    script(src='/javascripts/lib/bootstrap/js/popper.min.js')
+    script(src='/javascripts/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/javascripts/jquery.slimscroll.js')
+    script(src='/javascripts/sidebarmenu.js')
+    script(src='/javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js')
+    script(src='/javascripts/scripts.js')
+    script(src='/javascripts/custom.min.js')
+    script(src="/javascripts/lib/datatables/datatables.min.js")
+    script(src="/javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js")
+    script(src="/javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js")
+    script(src="/javascripts/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js")
+    script(src="/javascripts/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js")
+    script(src="/javascripts/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js")
+    script(src="/javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js")
+    script(src="/javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js")
+    script(src="/javascripts/lib/datatables/datatables-init.js")
     script(src='/javascripts/custom.js')
+    script(src='/javascripts/datepicker.js')
