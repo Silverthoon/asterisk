@@ -1,0 +1,92 @@
+extends layout 
+
+block content
+    div(class="fix-header fix-sidebar")
+        div(class="preloader")
+            svg(class="circular" viewBox="25 25 50 50")
+                circle(class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10")
+        div(id="main-wrapper")
+            include panel
+            div(class="page-wrapper")
+                div(class="row page-titles")
+                    div(class="col-md-5 align-self-center")
+                        h3(class="text-skyran-3 Montserrat-Bold") Bills
+                    div(class="col-md-7 align-self-center")
+                        ol(class="breadcrumb Montserrat-Medium")
+                            li(class="breadcrumb-item")
+                                a(href="javascript:void(0)") Home
+                            li(class="breadcrumb-item active") Bills
+                div(class="container-fluid")
+                    div(class="row")
+                        div(class="col-12")
+                            div(class="card")
+                                div(class="card-body")
+                                    h4(class="card-title Montserrat-Bold text-skyran-3") Manage your current bills
+                                    h6(class="card-subtitle Montserrat-Regular mb-3") Export data to Excel & Print
+                                    if(from && to && recepient)
+                                        div(class="table-responsive m-t-40 Montserrat-Regular")
+                                            table(id="fromTo" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%")
+                                                thead
+                                                    tr
+                                                        th(scope="col" class="w-10") Recepient number
+                                                        th(scope="col") From
+                                                        th(scope="col") To
+                                                        th(scope="col" class="w-5") Total Duration
+                                                        th(scope="col") Unit Cost
+                                                        th(scope="col" class="w-10") Total Cost
+                                                tbody
+                                                    tr
+                                                        td=dst
+                                                        td=from
+                                                        td=to
+                                                        td=totalDuration
+                                                        td 2 fcfa/s
+                                                        td=totalCost
+                                    if(recepient)
+                                        if(src)
+                                            div(class="table-responsive m-t-40 Montserrat-Regular")
+                                                table(id="fromTo" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%")
+                                                    thead
+                                                        tr
+                                                            th(scope="col") Dialer number
+                                                            th(scope="col") Recepient
+                                                            th(scope="col") Total Duration
+                                                            th(scope="col") Unit Cost
+                                                            th(scope="col") Total Cost
+                                                    tbody
+                                                        tr
+                                                            td=src
+                                                            td=recepient
+                                                            td=totalDuration
+                                                            td 2 fcfa/s
+                                                            td=totalCost
+                                        else 
+                                            div(class="table-responsive m-t-40 Montserrat-Regular")
+                                                table(id="fromTo" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%")
+                                                    thead
+                                                        tr
+                                                            th(scope="col") Recepient number
+                                                            th(scope="col") Total Duration
+                                                            th(scope="col") Unit Cost
+                                                            th(scope="col") Total Cost
+                                                    tbody
+                                                        tr
+                                                            td=recepient
+                                                            td=totalDuration
+                                                            td 2 fcfa/s
+                                                            td=totalCost
+                                        //-if(src)
+                                            div(class="table-responsive m-t-40 Montserrat-Regular")
+                                                table(id="fromTo" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%")
+                                                    thead
+                                                        tr
+                                                            th(scope="col") Dialer number
+                                                            th(scope="col") Total Duration
+                                                            th(scope="col") Unit Cost
+                                                            th(scope="col") Total Cost
+                                                    tbody
+                                                        tr
+                                                            td=src
+                                                            td=totalDuration
+                                                            td 2 fcfa/s
+                                                            td=totalCost

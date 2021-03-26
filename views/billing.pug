@@ -1,26 +1,6 @@
 extends layout 
 
 block content
-    //-include head
-        div(class="container")
-            h3(class="my-5 text-center text-white Montserrat-Bold") Billing Details    
-            table(class="table bg-asterisk Montserrat.Regular text-white border border-secondary shadow table-borderless table-hover")
-                thead(class="shadow")
-                    tr
-                        th(scope="col") From
-                        th(scope="col") To
-                        th(scope="col") Destination
-                        th(scope="col") Total Duration
-                        th(scope="col") Unit Cost
-                        th(scope="col") Total Cost
-                tbody
-                    tr
-                        td(class="w-25")=from
-                        td(class="w-25")=to
-                        td 8001
-                        td=totalDuration+" seconds"
-                        td 2 fcfa/second
-                        td=totalCost+" fcfa"
     div(class="fix-header fix-sidebar")
         div(class="preloader")
             svg(class="circular" viewBox="25 25 50 50")
@@ -42,7 +22,8 @@ block content
                             div(class="card")
                                 div(class="card-body")
                                     h4(class="card-title Montserrat-Bold text-skyran-3") Choose at least one billing method and fill the form :
-                                    form(class="Montserrat-Bold")
+                                    h6(class="card-subtitle Montserrat-Regular mb-3") For the "Billing by User" option you'll have to provide a recepient from the "Billing by Recepient" form
+                                    form(class="Montserrat-Bold" method="post" action="/asterisk/billing")
                                         button(class="btn bg-skyran-3 text-white Montserrat-Bold mb-2" type="button" data-toggle="collapse" data-target="#billByUser" aria-expanded="false") Billing by User
                                         div(class="row")
                                             div(class="col")
@@ -51,8 +32,9 @@ block content
                                                         div(class="form-group row")
                                                             div(class="col-md-3")
                                                                 label(for="accountcode" class="form-label") Enter user phone number :
-                                                                input(type="text" class="form-control rounded" id="accountcode")
-                                        button(class="btn bg-skyran-3 text-white Montserrat-Bold mb-2" type="button" data-toggle="collapse" data-target="#billByPeriod" aria-expanded="false") Billing by Period
+                                                                input(type="text" class="form-control rounded" id="src" name="src")
+                                        h6(class="card-subtitle Montserrat-Regular mt-3") For the "Billing by Period" option you'll have to provide a recepient from the "Billing by Recepient" form
+                                        button(class="btn bg-skyran-3 text-white Montserrat-Bold mb-5" type="button" data-toggle="collapse" data-target="#billByPeriod" aria-expanded="false") Billing by Period
                                         div(class="row")
                                             div(class="col")
                                                 div(class="collapse" id="billByPeriod")
@@ -71,8 +53,8 @@ block content
                                                     div(class="card card-body") 
                                                         div(class="form-group row")
                                                             div(class="col-md-3")
-                                                                label(for="recipient" class="form-label") Enter recipient phone number :
-                                                                input(type="text" class="form-control rounded" id="recipient")
+                                                                label(for="recepient" class="form-label") Enter recepient phone number :
+                                                                input(type="text" class="form-control rounded" id="recepient" name="recepient")
                                         h6(class="card-subtitle Montserrat-Regular mt-5") Make sure you've filled at least one of the above forms before proceeding
                                         button(type="submit" class="btn bg-skyran-3 Montserrat-Bold text-white") Proceed
 
