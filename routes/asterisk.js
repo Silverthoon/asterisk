@@ -5,7 +5,7 @@ const paginate = require('express-paginate');
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-/* Dashboard------------------------------------------------------------------------------------------------------------- */
+/* Calls Management------------------------------------------------------------------------------------------------------------- */
 router.get('/dashboard', function (req, res, next) {
   async function loadCalls() {
     var calls = await CallList.findAndCountAll({order: [['accountcode', 'ASC']],},);
@@ -23,10 +23,45 @@ router.get('/dashboard', function (req, res, next) {
   loadCalls();
 });
 
+router.get('/callsReceived', function(req, res, next) {
+  if (req.session.username)
+    res.render('callsReceived', { title: 'Calls Received'});
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
+});
+
+router.get('/outgoingCalls', function(req, res, next) {
+  if (req.session.username)
+    res.render('outgoingCalls', { title: 'Outgoing Calls'});
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
+});
+
+router.get('/callsByUser', function(req, res, next) {
+  router.get('/outgoingCalls', function(req, res, next) {
+    if (req.session.username)
+      res.render('callsByUser', { title: 'Calls by User'});
+    else
+      res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
+  });
+});
+
+
+/* Users management--------------------------------------------------------------------------------------------------------------- */
+router.get('/usersManagement', function(req, res, next) {
+  if (req.session.username)
+    res.render('usersManagement', { title: 'Users Management' });
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
+});
+
 
 /* Billing--------------------------------------------------------------------------------------------------------------- */
 router.get('/billing', function(req, res, next) {
-  res.render('billing', { title: 'Billing' });
+  if (req.session.username)
+    res.render('billing', { title: 'Billing' });
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
 });
 
 router.post('/billing', function (req, res, next) {
@@ -131,19 +166,28 @@ router.post('/billing', function (req, res, next) {
 /* Bills---------------------------------------------------------------------------------------------------------------- */
 
 router.get('/bills', function(req, res, next) {
-  res.redirect('/asterisk/dashboard');
+  if (req.session.username)
+    res.render('bills', { title: 'Bills' });
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
 });
 
 /* Contact us------------------------------------------------------------------------------------------------------------- */
 
 router.get('/contact', function(req, res, next) {
-  res.redirect('/asterisk/dashboard');
+  if (req.session.username)
+    res.render('contact', { title: 'Contact' });
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
 });
 
 /* Settings------------------------------------------------------------------------------------------------------------- */
 
 router.get('/settings', function(req, res, next) {
-  res.redirect('/asterisk/dashboard');
+  if (req.session.username)
+    res.render('settings', { title: 'Settings' });
+  else
+    res.render('index', { title: 'Log in', notLoggedIn: 'You have to be logged in first.'});
 });
 
 /* Logout--------------------------------------------------------------------------------------------------------------- */

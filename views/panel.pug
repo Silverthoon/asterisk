@@ -22,9 +22,23 @@ div(class="left-sidebar")
             ul(id="sidebarnav")
                 li(class="nav-devider")
                 li 
-                    a(href="/asterisk/dashboard" class="mt-5")
-                                i(class="fa fa-tachometer text-skyran-3")
-                                span(class="Montserrat-Bold text-skyran-3") Dashboard
+                    a(href="#calls" class="mt-5 has-arrow" role="button" aria-expanded="false" aria-controls="calls" data-toggle="collapse")
+                        i(class="fa fa-phone text-skyran-3")
+                        span(class="Montserrat-Bold text-skyran-3 hide-menu") Calls Management
+                    div(class="collapse" id="calls")
+                        ul
+                            li
+                                a(href="/asterisk/dashboard" class="Montserrat-Bold text-skyran-3") Call Data Records
+                            li
+                                a(href="/asterisk/callsReceived" class="Montserrat-Bold text-skyran-3") Calls Received
+                            li
+                                a(href="/asterisk/outgoingCalls" class="Montserrat-Bold text-skyran-3") Outgoing Calls
+                            li
+                                a(href="/asterisk/callsByUser" class="Montserrat-Bold text-skyran-3") Calls by User
+                li 
+                    a(href="/asterisk/usersManagement" class="mt-5")
+                        i(class="fa fa-users text-skyran-3")
+                        span(class="Montserrat-Bold text-skyran-3") Users Management
                 li 
                     a(href="/asterisk/billing" class="mt-5")
                         i(class="fa fa-money text-skyran-3")
